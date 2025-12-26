@@ -1,11 +1,15 @@
 import React from "react";
 
-const Menu = ({ menu }) => {
+const Menu = (props) => {
   return (
     <div className="menu-container">
-      {menu.map((item) => {
+      {props.menu.map((item) => {
         return (
-          <div key={item.id} className="menu-item">
+          <div
+            key={item.id}
+            className="menu-item"
+            data-test-id={`menu-item-${item.category.toLowerCase()}`}
+          >
             <img
               src={item.img}
               className="menu-img"
